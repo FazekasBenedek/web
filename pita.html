@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitagorasz</title>
+   <link rel="stylesheet" href="style.css">
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: rgb(51, 51, 51);
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: #111;
+        }
+        
+        .active {
+          background-color: #04AA6D;
+        }
+        </style>
+
+</head>
+<body>
+
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="képlink.html">KÉPLINK</a></li>
+        <li><a href="listak.html">LISTÁK</a></li>
+        <li><a href="tablazat.html">ÓRAREND</a></li>
+        <li><a href="urlap.html">ŰRLAP</a></li>
+        <li><a href="evszakok.html">ÉVSZAKOK</a></li>
+        <li><a class="active" href="pita.html">PITAGORASZ</a></li>
+      </ul>
+    
+    <h1>PITAGORASZ TÉTEL SZÁMOLÓ</h1>
+    <img src="img/haromszog.png" alt="HÁROMSZÖG">
+
+    <p>Adj meg legalább két oldalt</p>
+    <form>
+        <p><input type="text" id="a" oninput="szam()"> a. oldal</p>
+        <p><input type="text" id="b" oninput="szam()"> b. oldal</p>
+        <p><input type="text" id="c" oninput="szam()"> c. oldal</p>
+    </form>
+
+
+    <script>
+        function szam() {
+            if (a.value != 0 && b.value != 0) {
+                c.value = Math.sqrt((a.value * a.value) + (b.value * b.value));
+            }
+            else if (a.value != 0 && c.value != 0) {
+                b.value = Math.sqrt((c.value * c.value)-(a.value * a.value));
+            }
+            else if (b.value != 0 && c.value != 0) {
+                a.value = Math.sqrt((c.value * c.value)-(b.value * b.value));
+            }
+        }
+    </script>
+
+</body>
+</html>
